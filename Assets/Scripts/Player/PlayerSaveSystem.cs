@@ -64,6 +64,7 @@ public class PlayerSaveSystem : AbstractBaseSave
         if (jsonString == "")
         {
             playerHealth.CurrentHealth = 100f;
+            await SceneMnager.Instance.LoadLevel(0, playerTransform.position);
             return;
         }
         SaveData loadData = JsonUtility.FromJson<SaveData>(jsonString);

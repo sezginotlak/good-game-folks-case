@@ -35,7 +35,7 @@ public class InventoryManager : MonoBehaviour
     public void RemoveItem(Item item)
     {
         InventoryItemData itemData = inventoryItemDataList.Where(x => x.item.id == item.id).FirstOrDefault();
-        InventorySlot inventorySlot = inventorySlotList.Where(x => x.InventoryItemData == itemData).FirstOrDefault();
+        InventorySlot inventorySlot = inventorySlotList.Where(x => x.InventoryItemData.item.id == itemData.item.id).FirstOrDefault();
 
         if (itemData == null) return;
 
